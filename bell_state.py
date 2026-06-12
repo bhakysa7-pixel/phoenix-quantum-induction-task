@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 A = np.array([1,0])
 state=np.kron(A,A)           #create a |00> state by taking the tensor product of two zero qubits
@@ -30,7 +31,14 @@ print("Bell state :")        # |00> remains |00>  # |10> becomes |11>
 print(bell_state)            # Result: (|00> + |11>)/√2
 
 
-p=np.abs(bell_state)**2  #compute the probabilities 
+p=np.abs(bell_state)**2  #compute the probabilities
+states = ['00','01','10','11']
+
+plt.bar(states, p)
+plt.title("Bell State Probability Distribution")
+plt.xlabel("States")
+plt.ylabel("Probability")
+plt.show()
 print("00 probability :", p[0])
 print("01 probability :", p[1])
 print("10 probability :", p[2])
