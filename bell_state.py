@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt #type : ignore 
 
 A = np.array([1,0])
 state=np.kron(A,A)           #create a |00> state by taking the tensor product of two zero qubits
