@@ -1,5 +1,5 @@
-import numpy as np
-import matplotlib.pyplot as plt #type : ignore 
+import numpy as np 
+import matplotlib.pyplot as plt  # type: ignore
 
 A = np.array([1,0])
 state=np.kron(A,A)           #create a |00> state by taking the tensor product of two zero qubits
@@ -32,13 +32,7 @@ print(bell_state)            # Result: (|00> + |11>)/√2
 
 
 p=np.abs(bell_state)**2  #compute the probabilities
-states = ['00','01','10','11']
 
-plt.bar(states, p)
-plt.title("Bell State Probability Distribution")
-plt.xlabel("States")
-plt.ylabel("Probability")
-plt.show()
 print("00 probability :", p[0])
 print("01 probability :", p[1])
 print("10 probability :", p[2])
@@ -47,6 +41,13 @@ outcomes = ['00','01','10','11']
 answer = np.random.choice(outcomes,p=p) #simulate measurement by randomly choosing an outcome based on the probabilities 
 print("outcomes are : ", outcomes)
 print("Measured State :", answer)
+
+states = ['00','01','10','11'] #for getting the graph
+plt.bar(states, p)
+plt.title("Bell State Probability Distribution")
+plt.xlabel("States")
+plt.ylabel("Probability")
+plt.show()
 
 
 
